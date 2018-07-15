@@ -39,7 +39,7 @@ on them to enter the edit mode.
 ## JavaScript
 
 
-```cpp
+```c_cpp
 #include <iostream>
 using namespace std;
 
@@ -66,7 +66,7 @@ int main() {
 
 ## Macro
 
-```cpp
+```c_cpp
 #include <iostream>
 using namespace std;
 
