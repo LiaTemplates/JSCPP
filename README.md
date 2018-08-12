@@ -12,7 +12,7 @@ script:   https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
 <script>
   try {
     var output = "";
-    JSCPP.run(`{{0}}`, "", {stdio: {write: s => { output += s.replace(/\n/g, "<br>");}}});
+    JSCPP.run(`@file(0)`, "", {stdio: {write: s => { output += s.replace(/\n/g, "<br>");}}});
     output;
   } catch (error) {
     error;
@@ -40,7 +40,7 @@ on them to enter the edit mode.
 
 
 ```c_cpp
-#include <iostream>
+#include <iostream>s
 using namespace std;
 
 int main() {
@@ -57,7 +57,7 @@ int main() {
 <script>
   try {
     var output = "";
-    JSCPP.run(`{{0}}`, "", {stdio: {write: s => { output += s.replace(/\n/g, "<br>");}}});
+    JSCPP.run(`@file(0)`, "", {stdio: {write: s => { output += s.replace(/\n/g, "<br>");}}});
     output;
   } catch (error) {
     error;
