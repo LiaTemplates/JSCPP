@@ -12,7 +12,7 @@ script:   https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
 <script>
   try {
     var output = "";
-    JSCPP.run(`@file(0)`, "", {stdio: {write: s => { output += s.replace(/\n/g, "<br>");}}});
+    JSCPP.run(`@code`, "", {stdio: {write: s => { output += s.replace(/\n/g, "<br>");}}});
     output;
   } catch (error) {
     error;
@@ -57,7 +57,7 @@ int main() {
 <script>
   try {
     var output = "";
-    JSCPP.run(`@file(0)`, "", {stdio: {write: s => { output += s.replace(/\n/g, "<br>");}}});
+    JSCPP.run(`@code`, "", {stdio: {write: s => { output += s.replace(/\n/g, "<br>");}}});
     output;
   } catch (error) {
     error;
