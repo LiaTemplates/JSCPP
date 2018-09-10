@@ -2,7 +2,7 @@
 
 author:   Andre Dietrich
 email:    dietrich@ivs.cs.uni-magdeburg.de
-version:  1.0.0
+version:  1.1.0
 language: en_US
 narrator: US English Female
 
@@ -14,8 +14,17 @@ script:   https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
     var output = "";
     JSCPP.run(`@code`, "", {stdio: {write: s => { output += s.replace(/\n/g, "<br>");}}});
     output;
-  } catch (error) {
-    error;
+  } catch (msg) {
+    var error = new LiaError(msg, 1);
+    var log = msg.match(/(.*)\nline (\d+) \(column (\d+)\):.*\n.*\n(.*)/);
+    var info = log[1] + " " + log[4];
+
+    if (info.length > 80)
+      info = info.substring(0,76) + "..."
+
+    error.add_detail(0, info, "error", log[2]-1, log[3]);
+
+    throw error;
   }
 </script>
 @end
@@ -39,7 +48,7 @@ on them to enter the edit mode.
 ## JavaScript
 
 
-```c_cpp
+```cpp
 #include <iostream>s
 using namespace std;
 
