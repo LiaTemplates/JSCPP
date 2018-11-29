@@ -8,13 +8,14 @@ narrator: US English Female
 
 script:   https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
 
-@JSCPP
+@JSCPP.__eval
 <script>
   try {
     var output = "";
-    JSCPP.run(`@input`, "", {stdio: {write: s => { output += s }}});
+    JSCPP.run(`@0`, `@1`, {stdio: {write: s => { output += s }}});
     output;
   } catch (msg) {
+    console.log(JSON.stringify(msg))
     var error = new LiaError(msg, 1);
     var log = msg.match(/(.*)\nline (\d+) \(column (\d+)\):.*\n.*\n(.*)/);
     var info = log[1] + " " + log[4];
@@ -28,6 +29,12 @@ script:   https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
   }
 </script>
 @end
+
+
+@JSCPP.eval: @JSCPP.__eval(@input, )
+
+@JSCPP.eval_input: @JSCPP.__eval(@input,`@input(1)`)
+
 -->
 
 # jscpp_template
@@ -49,7 +56,7 @@ on them to enter the edit mode.
 
 
 ```cpp
-#include <iostream>s
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -68,8 +75,17 @@ int main() {
     var output = "";
     JSCPP.run(`@input`, "", {stdio: {write: s => { output += s }}});
     output;
-  } catch (error) {
-    error;
+  } catch (msg) {
+    var error = new LiaError(msg, 1);
+    var log = msg.match(/(.*)\nline (\d+) \(column (\d+)\):.*\n.*\n(.*)/);
+    var info = log[1] + " " + log[4];
+
+    if (info.length > 80)
+      info = info.substring(0,76) + "..."
+
+    error.add_detail(0, info, "error", log[2]-1, log[3]);
+
+    throw error;
   }
 </script>
 
@@ -90,4 +106,30 @@ int main() {
     return 0;
 }
 ```
-@JSCPP
+@JSCPP.eval
+
+
+## Macro with input
+
+```c_cpp main.c
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a;
+
+    cin >> a;
+
+    int rslt = 0;
+    for(int i=1; i<a; ++i) {
+        rslt += i;
+        cout << "rslt: " << rslt << endl;
+    }
+    cout << "final result = " << rslt << endl;
+    return 0;
+}
+```
+``` text +stdin
+5
+```
+@JSCPP.eval_input
