@@ -1,10 +1,16 @@
 <!--
-
 author:   André Dietrich
+
 email:    andre.dietrich@ovgu.de
+
 version:  1.2.0
+
 language: en
+
 narrator: US English Female
+
+comment:  Two macros that can be used to execute C++ snippets in LiaScript.
+
 
 script:   https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
 
@@ -52,11 +58,12 @@ __See the project on Github:__
 https://github.com/liaScript/jscpp_template
 
                          --{{1}}--
-There are three ways to use this template. The easiest way is to use the import
-statement and the url of the raw text-file of the master branch or any other
-branch or version. But you can also copy the required functionionality directly
-into the header or your Markdown document, see therefor the [last slide](#4).
-And of course, you could also clone this project and change it, as you wish.
+There are three ways to use this template. The easiest way is to use the
+`import` statement and the url of the raw text-file of the master branch or any
+other branch or version. But you can also copy the required functionionality
+directly into the header of your Markdown document, see therefor the
+[last slide](#4). And of course, you could also clone this project and change
+it, as you wish.
 
                            {{1}}
 1. Load the macros via
@@ -136,7 +143,7 @@ The code shows how the macros were implemented by calling the macro
 defines the reference to the JSCPP javascript implementation that needs to be
 called to load the interpreter.
 
-``` html
+``` js
 script: https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
 
 @JSCPP.eval: @JSCPP.__eval(@input, )
