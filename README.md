@@ -3,7 +3,7 @@ author:   André Dietrich
 
 email:    andre.dietrich@ovgu.de
 
-version:  1.2.0
+version:  0.2.0
 
 language: en
 
