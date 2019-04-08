@@ -51,6 +51,9 @@ executable.
 
 __Try it on LiaScript:__
 
+<!-- hidden = "true" -->
+![demo](demo.gif)
+
 https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/jscpp_template/master/README.md
 
 __See the project on Github:__
