@@ -3,7 +3,7 @@ author:   André Dietrich
 
 email:    andre.dietrich@ovgu.de
 
-version:  0.2.0
+version:  0.3.0
 
 language: en
 
@@ -54,11 +54,11 @@ __Try it on LiaScript:__
 <!-- hidden = "true" -->
 ![demo](demo.gif)
 
-https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/jscpp_template/master/README.md
+https://liascript.github.io/course/?https://raw.githubusercontent.com/liaTemplates/JSCPP/master/README.md
 
 __See the project on Github:__
 
-https://github.com/liaScript/jscpp_template
+https://github.com/liaTemplates/JSCPP
 
                          --{{1}}--
 There are three ways to use this template. The easiest way is to use the
@@ -71,7 +71,7 @@ it, as you wish.
                            {{1}}
 1. Load the macros via
 
-   `import: https://raw.githubusercontent.com/liaScript/jscpp_template/master/README.md`
+   `import: https://raw.githubusercontent.com/liaTemplates/JSCPP/master/README.md`
 
 2. Copy the definitions into your Project
 
@@ -183,4 +183,4 @@ If you want to minimize loading effort in your LiaScript project, you can also
 copy this code and paste it into your main comment header, see the code in the
 raw file of this document.
 
-{{1}} https://raw.githubusercontent.com/liaScript/jscpp_template/master/README.md
+{{1}} https://raw.githubusercontent.com/liaTemplates/JSCPP/master/README.md
