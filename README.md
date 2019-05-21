@@ -40,7 +40,7 @@ script:   https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
 
 -->
 
-# jscpp_template
+# JSCPP - Template
 
 
                          --{{0}}--
