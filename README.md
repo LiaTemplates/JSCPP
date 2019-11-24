@@ -3,13 +3,16 @@ author:   André Dietrich
 
 email:    andre.dietrich@ovgu.de
 
-version:  0.3.0
+version:  0.3.1
 
 language: en
 
 narrator: US English Female
 
-comment:  Two macros that can be used to execute C++ snippets in LiaScript.
+logo:     demo.gif
+
+comment:  Two macros that can be used to execute C++ snippets with the JSCCP
+          interpreter in LiaScript.
 
 
 script:   https://felixhao28.github.io/JSCPP/dist/JSCPP.es5.min.js
